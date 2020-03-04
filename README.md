@@ -1,1 +1,1 @@
-# MS-SQL
+# MS-SQL related SQL scripts
