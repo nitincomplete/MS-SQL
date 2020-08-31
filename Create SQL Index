@@ -1,0 +1,12 @@
+Use [DatabaseName]
+GO
+
+IF EXISTS(SELECT * FROM SYS.INDEXES WHERE Name = 'IX_Name')
+BEGIN
+      DROP INDEX [CollateralReleaseRequest].IX_Name 
+END
+IF NOT EXISTS(SELECT * FROM SYS.INDEXES WHERE Name = 'IX_Name')
+BEGIN
+      CREATE NONCLUSTERED INDEX IX_Name ON [TableName]([AccountNumber],[CustomerName],[CustomerNumber],ID)
+END
+GO
